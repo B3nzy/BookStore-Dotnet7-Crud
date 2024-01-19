@@ -1,0 +1,32 @@
+﻿@using BookStore.Entities;
+<h1>Specify book details.</h1>
+<hr />
+<br />
+
+@{
+    Book book = Model;
+
+    <form action="/book/edit" method="post">
+
+        <label for="id">Id : </label>
+        <input class="form-control" value=@book.Id type="text" name="id" id="id" readonly/>
+
+        <label for="title">Title : </label>
+        <input class="form-control" value=@book.Title type="text" name="title" id="title" />
+
+        <label for="author">Author : </label>
+        <input class="form-control" value=@book.Author type="text" name="author" id="author" />
+
+        <label for="price">Price : </label>
+        <input class="form-control" value=@book.Price type="number" name="price" id="price" />
+
+        <label for="quantity">Quantity : </label>
+        <input class="form-control" value=@book.Qunatity type="number" name="quantity" id="quantity" />
+
+        <button type="submit">Update</button>
+    </form>
+}
+
+
+
+<p><a href="/">Click here to go back.</a></p>

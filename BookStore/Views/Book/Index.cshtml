@@ -1,0 +1,35 @@
+﻿@using BookStore.Entities;
+
+
+<h1 class="text-center">Welcome to book management app.</h1>
+<br />
+<a href="/book/add">Click here to add a new book.</a>
+<hr/>
+<br />
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Quanity</th>
+        <th colspan="2">Actions</th>
+    </tr>
+    @{
+        List<Book> bookList = Model;
+        @foreach(var book in bookList)
+        {
+            var id = book.Id;
+
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+                <td>@book.Qunatity</td>
+                <td><a href="/book/edit/@id"><button class="btn-warning">Edit</button></a></td>
+                <td><a href="/book/delete/@id"><button class="btn-danger">Delete</button></a></td>
+            </tr>
+        }
+    }
+</table>
